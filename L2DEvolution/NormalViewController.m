@@ -11,9 +11,9 @@
 #import <Social/Social.h>
 #import "UserGuide.h"
 
-#define kYokohamaURL @"ws://128.199.223.211:3005"
-#define kLosAngelesURL @"ws://128.199.223.211:5000"
-#define kSaigonURL @"ws://128.199.223.211:4000"
+#define kYokohamaURL @"ws://188.166.225.139:3000"
+#define kSaigonClassicURL @"ws://188.166.225.139:4000"
+#define kSaigonURL @"ws://188.166.225.139:5000"
 
 
 @interface NormalViewController () <SRWebSocketDelegate, UIAlertViewDelegate, UIActionSheetDelegate> {
@@ -75,7 +75,7 @@
 {
     switch (self.tag) {
         case 0:
-            socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kLosAngelesURL]]];
+            socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kSaigonClassicURL]]];
             break;
         case 1:
             socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kSaigonURL]]];
