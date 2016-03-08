@@ -11,9 +11,9 @@
 #import <Social/Social.h>
 #import "UserGuide.h"
 
-#define kYokohamaURL @"ws://188.166.225.139:3000"
-#define kSaigonClassicURL @"ws://188.166.225.139:4000"
-#define kSaigonURL @"ws://188.166.225.139:5000"
+#define kYokohamaURL @"ws://188.166.225.139:9000"
+#define kSaigonClassicURL @"ws://188.166.225.139:9000"
+#define kSaigonURL @"ws://188.166.225.139:9000"
 
 
 @interface NormalViewController () <SRWebSocketDelegate, UIAlertViewDelegate, UIActionSheetDelegate> {
@@ -26,6 +26,7 @@
     __weak IBOutlet UIButton *btn8;
     __weak IBOutlet UIButton *btn1;
     __weak IBOutlet UIButton *btn3;
+    BOOL isConnected;
 }
 
 @end
@@ -35,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    isConnected = NO;
     [self setupSocket];
 }
 
@@ -99,6 +101,7 @@
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket
 {
     NSLog(@"Connected");
+    isConnected = YES;
     [self sendToken];
 }
 
@@ -142,6 +145,9 @@
 
 - (IBAction)buttonReleased:(id)sender
 {
+    if (!isConnected) {
+        return;
+    }
     UIButton* button = (UIButton*)sender;
     
     if (button.tag==3 || button.tag==1) {
@@ -150,18 +156,34 @@
         [socket send:@"5"];
     }
 }
+- (IBAction)laserButtonSelected:(id)sender
+{
+    if (!isConnected) {
+        return;
+    }
+    [socket send:@"lz"];
+}
 
 - (IBAction)circleBtnSelected:(id)sender
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:@"x"];
 }
 
 - (IBAction)squareBtnSelected:(id)sender
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:@"y"];
 }
 - (IBAction)ovalBtnSelected:(id)sender
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:@"z"];
 }
 
@@ -176,6 +198,9 @@
 
 - (void)sendToken
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
 }
 
@@ -202,6 +227,9 @@
 
 - (void)disconnectSocket
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:@"5"];
     [socket send:@"0"];
     [socket close];

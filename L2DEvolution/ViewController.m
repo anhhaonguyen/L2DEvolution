@@ -17,6 +17,7 @@
     SRWebSocket* socket;
     __weak IBOutlet UIButton *buttonState;
     NSTimer* timer;
+    BOOL isConnected;
 }
 @end
 
@@ -25,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    isConnected = NO;
     [self setupSocket];
 }
 
@@ -61,6 +63,7 @@
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket
 {
     NSLog(@"Connected");
+    isConnected = YES;
     [self sendToken];
 }
 
@@ -99,6 +102,9 @@
 
 - (void)sendToken
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
 }
 
@@ -123,6 +129,9 @@
 
 - (void)disconnectSocket
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:@"5"];
     [socket close];
     UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Timeout" message:@"Your session is ended. System will disconnect now. Please help us spread this remote to the world" delegate:self cancelButtonTitle:@"Not now" otherButtonTitles: @"OK", nil];
@@ -143,6 +152,9 @@
 
 - (IBAction)buttonPressed:(id)sender
 {
+    if (!isConnected) {
+        return;
+    }
     UIButton* btn = (UIButton*)sender;
     NSLog(@"Button %ld pressed", (long)btn.tag);
     NSString* message = [NSString stringWithFormat:@"%ld", (long)btn.tag];
@@ -151,24 +163,43 @@
 
 - (IBAction)buttonReleased:(id)sender
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:@"5"];
 }
 
 - (IBAction)squareBtnSelected:(id)sender
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:@"y"];
 }
 - (IBAction)circleBtnSelected:(id)sender
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:@"x"];
 }
 - (IBAction)ovalBtnSelected:(id)sender
 {
+    if (!isConnected) {
+        return;
+    }
     [socket send:@"z"];
 }
 - (IBAction)btnStateSelected:(id)sender
 {
     [self reconnect];
+}
+- (IBAction)laserButtonSelected:(id)sender
+{
+    if (!isConnected) {
+        return;
+    }
+    [socket send:@"lz"];
 }
 #pragma mark - UIAlertView Delegate
 
