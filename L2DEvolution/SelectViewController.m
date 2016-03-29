@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "NormalViewController.h"
 #import "UserGuide.h"
+#import "LaserViewController.h"
 
 #define kLosAngelesTag 0
 #define kSaigonTag 1
@@ -33,7 +34,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSLog(@"%@", NSStringFromCGRect(btnLA.frame));
+//    NSLog(@"%@", NSStringFromCGRect(btnLA.frame));
 //    [[UserGuide sharedInstance] addSimpleUserGuideWithText:kUserGuideSelectCity atView:btnLA fromRect:btnLA.frame fromViewController:self];
 }
 
@@ -48,6 +49,7 @@
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
     NormalViewController* normalVC = [storyboard instantiateViewControllerWithIdentifier:@"NormalViewController"];
+    LaserViewController* laserVC = [storyboard instantiateViewControllerWithIdentifier:@"LaserViewController"];
     switch (button.tag) {
         case kLosAngelesTag:
             normalVC.tag = kLosAngelesTag;
@@ -55,16 +57,17 @@
             break;
         case kSaigonTag:
 //            normalVC.tag = kSaigonTag;
-            vc.tag = kSaigonTag;
+            vc.tag = 9000;
             [self.navigationController pushViewController:vc animated:YES];
             break;
         case kYokohamaTag:
-            normalVC.tag = kYokohamaTag;
-            [self.navigationController pushViewController:normalVC animated:YES];
+//            normalVC.tag = kYokohamaTag;
+            [self.navigationController pushViewController:laserVC animated:YES];
             break;
         default:
-            normalVC.tag = kTokyoTag;
-            [self.navigationController pushViewController:normalVC animated:YES];
+//            normalVC.tag = kTokyoTag;
+            vc.tag = 8000;
+            [self.navigationController pushViewController:vc animated:YES];
             break;
     }
 }

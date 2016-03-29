@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5012D6B81CA44BC90030E477 /* LaserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5012D6B71CA44BC90030E477 /* LaserViewController.m */; };
 		50A641A71C8C33BD0049EBDB /* laser_beam.png in Resources */ = {isa = PBXBuildFile; fileRef = 50A641A61C8C33BD0049EBDB /* laser_beam.png */; };
 		50C126CD1C7B4F1F000D45B1 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C126C41C7B4F1F000D45B1 /* Icon-40.png */; };
 		50C126CE1C7B4F1F000D45B1 /* Icon-40@2x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C126C51C7B4F1F000D45B1 /* Icon-40@2x-1.png */; };
@@ -106,6 +107,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5012D6B61CA44BC90030E477 /* LaserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserViewController.h; sourceTree = "<group>"; };
+		5012D6B71CA44BC90030E477 /* LaserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaserViewController.m; sourceTree = "<group>"; };
 		50A641A61C8C33BD0049EBDB /* laser_beam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser_beam.png; sourceTree = "<group>"; };
 		50C126C41C7B4F1F000D45B1 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40.png"; path = "icons/Icon-40.png"; sourceTree = "<group>"; };
 		50C126C51C7B4F1F000D45B1 /* Icon-40@2x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@2x-1.png"; path = "icons/Icon-40@2x-1.png"; sourceTree = "<group>"; };
@@ -323,6 +326,8 @@
 				844161401A3D660D00E510B8 /* UserGuide.m */,
 				844161421A3D6C7600E510B8 /* UserGuideViewController.h */,
 				844161431A3D6C7600E510B8 /* UserGuideViewController.m */,
+				5012D6B61CA44BC90030E477 /* LaserViewController.h */,
+				5012D6B71CA44BC90030E477 /* LaserViewController.m */,
 			);
 			path = L2DEvolution;
 			sourceTree = "<group>";
@@ -634,6 +639,7 @@
 				84C450821A055A870013A302 /* AFHTTPRequestOperation.m in Sources */,
 				84C4509E1A055A8C0013A302 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				84D953CF1A3096C2009CC799 /* SocketConnection.m in Sources */,
+				5012D6B81CA44BC90030E477 /* LaserViewController.m in Sources */,
 				84C4502A1A054EA40013A302 /* AppDelegate.m in Sources */,
 				84C450881A055A870013A302 /* AFURLRequestSerialization.m in Sources */,
 				84C450841A055A870013A302 /* AFHTTPSessionManager.m in Sources */,
@@ -775,7 +781,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "License 2 Draw";
-				PROVISIONING_PROFILE = "7cf773a7-843f-4210-9681-9368c5d8fe63";
+				PROVISIONING_PROFILE = "ed34ac91-3b35-4536-8680-ccf3059204cc";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -791,7 +797,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "License 2 Draw";
-				PROVISIONING_PROFILE = "e1158a40-b0c8-40d1-875b-9006859731e8";
+				PROVISIONING_PROFILE = "c5bfd857-999a-46ae-b6c4-791a2cd9ea2a";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

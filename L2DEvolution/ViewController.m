@@ -11,7 +11,8 @@
 #import "AFNetworking.h"
 #import <Social/Social.h>
 
-#define kURL @"ws://188.166.225.139:9000"
+#define kURL @"ws://103.7.41.111:9000"
+#define kURL2 @"ws://103.7.41.111:8000"
 
 @interface ViewController () <SRWebSocketDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
     SRWebSocket* socket;
@@ -110,7 +111,14 @@
 
 - (void)setupSocket
 {
-    socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kURL]]];
+    if (self.tag==9000) {
+        NSLog(@"Connect to port 9000");
+        socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kURL]]];
+    } else {
+        NSLog(@"Connect to port 8000");
+        socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kURL2]]];
+    }
+    
     [socket setDelegate:self];
     [socket open];
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vzd-Rz-SR5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vzd-Rz-SR5">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -61,9 +61,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTb-lo-pm3">
-                                <rect key="frame" x="125" y="364" width="104" height="30"/>
+                                <rect key="frame" x="100" y="364" width="154" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="LOS ANGELES">
+                                <state key="normal" title="SAIGON EOLUTION 2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -93,9 +93,9 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9z-lu-ThT">
-                                <rect key="frame" x="410" y="364" width="90" height="30"/>
+                                <rect key="frame" x="431" y="364" width="49" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="YOKOHAMA">
+                                <state key="normal" title="LASER">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -313,17 +313,6 @@
                                     <constraint firstAttribute="height" constant="80" id="prv-id-dPg"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bu2-hB-0ox">
-                                <rect key="frame" x="356" y="502" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Zul-M5-EzH"/>
-                                    <constraint firstAttribute="height" constant="60" id="y0D-Kx-iL7"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="laser_beam.png"/>
-                                <connections>
-                                    <action selector="laserButtonSelected:" destination="PcS-y4-m2C" eventType="touchUpInside" id="Wq9-M5-o0P"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -334,7 +323,6 @@
                             <constraint firstItem="ZQ8-5v-TK4" firstAttribute="leading" secondItem="Po8-kS-uQe" secondAttribute="trailing" constant="29" id="9OI-Ue-9Zj"/>
                             <constraint firstAttribute="centerX" secondItem="Po8-kS-uQe" secondAttribute="centerX" id="A3N-Ib-KPD"/>
                             <constraint firstItem="sxu-S5-Bnb" firstAttribute="centerY" secondItem="oeJ-SA-a9F" secondAttribute="centerY" id="A4O-OM-wJc"/>
-                            <constraint firstItem="oeJ-SA-a9F" firstAttribute="leading" secondItem="bu2-hB-0ox" secondAttribute="trailing" constant="40" id="Ds5-Gb-7c1"/>
                             <constraint firstItem="dgy-VN-TF7" firstAttribute="leading" secondItem="EpP-0d-EI3" secondAttribute="leading" id="F4T-bc-jYM"/>
                             <constraint firstItem="ppo-qv-F0y" firstAttribute="leading" secondItem="3aN-tt-uSO" secondAttribute="leading" id="F8G-jO-d1k"/>
                             <constraint firstItem="PyP-ah-ihT" firstAttribute="centerY" secondItem="ZQ8-5v-TK4" secondAttribute="centerY" id="HGQ-rm-ToN"/>
@@ -350,7 +338,6 @@
                             <constraint firstAttribute="trailing" secondItem="dgy-VN-TF7" secondAttribute="trailing" id="qbi-Ox-vYM"/>
                             <constraint firstItem="Pet-zL-H1R" firstAttribute="leading" secondItem="oeJ-SA-a9F" secondAttribute="trailing" constant="8" id="s1p-c7-oqe"/>
                             <constraint firstItem="Po8-kS-uQe" firstAttribute="top" secondItem="FcU-fR-IKZ" secondAttribute="bottom" constant="8" id="th0-1K-xlg"/>
-                            <constraint firstItem="oeJ-SA-a9F" firstAttribute="centerY" secondItem="bu2-hB-0ox" secondAttribute="centerY" id="wj2-gb-nRi"/>
                             <constraint firstItem="Po8-kS-uQe" firstAttribute="leading" secondItem="PyP-ah-ihT" secondAttribute="trailing" constant="41" id="xAI-Im-NYx"/>
                         </constraints>
                     </view>
@@ -369,6 +356,119 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulv-gm-qh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="230" y="-20"/>
+        </scene>
+        <!--Laser View Controller-->
+        <scene sceneID="sjA-BG-JKD">
+            <objects>
+                <viewController storyboardIdentifier="LaserViewController" id="tXM-6t-7sC" customClass="LaserViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m2t-XS-sHj"/>
+                        <viewControllerLayoutGuide type="bottom" id="mJt-KW-YZk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d6c-Or-IjF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="O65-KY-yMg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title.png" translatesAutoresizingMaskIntoConstraints="NO" id="9yi-o2-znf">
+                                <rect key="frame" x="0.0" y="20" width="600" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Mh4-da-Ulk"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ly-Nj-BhR">
+                                <rect key="frame" x="270" y="270" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="8fY-lp-vbT"/>
+                                    <constraint firstAttribute="width" constant="60" id="vHe-v3-bE2"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="laser_beam.png"/>
+                                <connections>
+                                    <action selector="laserButtonPressed:" destination="tXM-6t-7sC" eventType="touchUpInside" id="88H-Mf-SKH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHv-J5-BSZ">
+                                <rect key="frame" x="170" y="270" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="oN9-oQ-UOf"/>
+                                    <constraint firstAttribute="height" constant="60" id="yxB-L6-MK2"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="laser_beam.png"/>
+                                <connections>
+                                    <action selector="laserButtonPressed:" destination="tXM-6t-7sC" eventType="touchUpInside" id="tdW-84-OLp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ES5-Ke-s7j">
+                                <rect key="frame" x="370" y="270" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="4Ek-I7-mP0"/>
+                                    <constraint firstAttribute="height" constant="60" id="JIJ-Zl-cgO"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="laser_beam.png"/>
+                                <connections>
+                                    <action selector="laserButtonPressed:" destination="tXM-6t-7sC" eventType="touchUpInside" id="0hV-Nd-Y7o"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laser 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgo-Mo-PHS">
+                                <rect key="frame" x="171" y="338" width="58" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="Fez-7f-gZl"/>
+                                    <constraint firstAttribute="height" constant="21" id="LGJ-0u-yFb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laser 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="804-FS-GXt">
+                                <rect key="frame" x="270" y="338" width="61" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="AX7-zG-iEV"/>
+                                    <constraint firstAttribute="height" constant="21" id="QF8-cA-V7g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laser 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eba-a6-K12">
+                                <rect key="frame" x="370" y="338" width="59" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9we-Zj-rXP"/>
+                                    <constraint firstAttribute="width" constant="59" id="l2K-Ac-puI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ES5-Ke-s7j" firstAttribute="centerY" secondItem="6Ly-Nj-BhR" secondAttribute="centerY" id="4vd-e0-Ut8"/>
+                            <constraint firstItem="6Ly-Nj-BhR" firstAttribute="centerY" secondItem="zHv-J5-BSZ" secondAttribute="centerY" id="6zZ-Xv-CZe"/>
+                            <constraint firstItem="ES5-Ke-s7j" firstAttribute="leading" secondItem="6Ly-Nj-BhR" secondAttribute="trailing" constant="40" id="AOl-Ud-0Gf"/>
+                            <constraint firstItem="6Ly-Nj-BhR" firstAttribute="leading" secondItem="zHv-J5-BSZ" secondAttribute="trailing" constant="40" id="Bqn-p6-ZOq"/>
+                            <constraint firstItem="9yi-o2-znf" firstAttribute="leading" secondItem="d6c-Or-IjF" secondAttribute="leading" id="CzP-vZ-cXc"/>
+                            <constraint firstItem="mgo-Mo-PHS" firstAttribute="centerX" secondItem="zHv-J5-BSZ" secondAttribute="centerX" id="EqV-jq-o8V"/>
+                            <constraint firstItem="eba-a6-K12" firstAttribute="top" secondItem="ES5-Ke-s7j" secondAttribute="bottom" constant="8" id="EyW-d4-pe7"/>
+                            <constraint firstItem="O65-KY-yMg" firstAttribute="top" secondItem="d6c-Or-IjF" secondAttribute="top" id="FUc-eJ-9ak"/>
+                            <constraint firstItem="O65-KY-yMg" firstAttribute="leading" secondItem="d6c-Or-IjF" secondAttribute="leading" id="GuW-2o-aWF"/>
+                            <constraint firstItem="6Ly-Nj-BhR" firstAttribute="centerY" secondItem="d6c-Or-IjF" secondAttribute="centerY" id="KBn-fb-MQ6"/>
+                            <constraint firstItem="mgo-Mo-PHS" firstAttribute="top" secondItem="zHv-J5-BSZ" secondAttribute="bottom" constant="8" id="NNR-yy-w9o"/>
+                            <constraint firstItem="mJt-KW-YZk" firstAttribute="top" secondItem="O65-KY-yMg" secondAttribute="bottom" id="OWi-Ob-Qs8"/>
+                            <constraint firstItem="6Ly-Nj-BhR" firstAttribute="centerX" secondItem="d6c-Or-IjF" secondAttribute="centerX" id="X8U-RF-Qr7"/>
+                            <constraint firstItem="eba-a6-K12" firstAttribute="centerX" secondItem="ES5-Ke-s7j" secondAttribute="centerX" id="Z43-BW-kzM"/>
+                            <constraint firstAttribute="trailing" secondItem="O65-KY-yMg" secondAttribute="trailing" id="b7x-Ew-VZE"/>
+                            <constraint firstItem="9yi-o2-znf" firstAttribute="top" secondItem="m2t-XS-sHj" secondAttribute="bottom" id="ch3-rP-vAw"/>
+                            <constraint firstItem="804-FS-GXt" firstAttribute="top" secondItem="6Ly-Nj-BhR" secondAttribute="bottom" constant="8" id="gX9-w1-XG3"/>
+                            <constraint firstItem="804-FS-GXt" firstAttribute="centerX" secondItem="6Ly-Nj-BhR" secondAttribute="centerX" id="wWw-sw-NF6"/>
+                            <constraint firstAttribute="trailing" secondItem="9yi-o2-znf" secondAttribute="trailing" id="ybM-c3-EAy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cw1-i3-RwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="1394"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -587,17 +687,6 @@
                                     <action selector="circleBtnSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fLw-px-N3p"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOm-6h-6CL" userLabel="LASER">
-                                <rect key="frame" x="435" y="472" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="VgJ-jc-Jyo"/>
-                                    <constraint firstAttribute="height" constant="50" id="w5s-Sg-bg6"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="laser_beam.png"/>
-                                <connections>
-                                    <action selector="laserButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oFm-fb-gbd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -618,13 +707,11 @@
                             <constraint firstItem="enV-ug-g25" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IIF-1z-5qL"/>
                             <constraint firstItem="Jev-xi-cit" firstAttribute="centerX" secondItem="dQU-Jb-q0g" secondAttribute="centerX" constant="-2" id="IOT-Ys-PBe"/>
                             <constraint firstItem="pQI-VM-KxD" firstAttribute="centerY" secondItem="enV-ug-g25" secondAttribute="centerY" constant="1" id="IW7-w7-BtP"/>
-                            <constraint firstItem="HOm-6h-6CL" firstAttribute="leading" secondItem="CZy-6U-lEN" secondAttribute="trailing" constant="40" id="KyR-yc-J7j"/>
                             <constraint firstItem="CZy-6U-lEN" firstAttribute="centerX" secondItem="B1h-os-NDl" secondAttribute="centerX" id="M6d-0Z-Kph"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="saD-RD-k8u" secondAttribute="bottom" id="MQr-uJ-BrX"/>
                             <constraint firstItem="CZy-6U-lEN" firstAttribute="centerY" secondItem="Jev-xi-cit" secondAttribute="centerY" id="MsK-uW-85f"/>
                             <constraint firstItem="saD-RD-k8u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MuT-9L-4kV"/>
                             <constraint firstItem="vBB-S7-QyU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="N2j-z3-z42"/>
-                            <constraint firstItem="HOm-6h-6CL" firstAttribute="centerY" secondItem="CZy-6U-lEN" secondAttribute="centerY" id="SU1-rR-WeB"/>
                             <constraint firstItem="a0l-1k-cTh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="TWc-a4-Uf4"/>
                             <constraint firstItem="Jev-xi-cit" firstAttribute="top" secondItem="enV-ug-g25" secondAttribute="bottom" constant="18" id="VkG-FU-eMT"/>
                             <constraint firstItem="Qtv-0W-SWi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-23" id="WxP-BQ-9fv"/>

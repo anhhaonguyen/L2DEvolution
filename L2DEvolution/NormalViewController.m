@@ -11,9 +11,10 @@
 #import <Social/Social.h>
 #import "UserGuide.h"
 
-#define kYokohamaURL @"ws://188.166.225.139:9000"
-#define kSaigonClassicURL @"ws://188.166.225.139:9000"
-#define kSaigonURL @"ws://188.166.225.139:9000"
+#define kYokohamaURL        @"ws://123.215.040.139"//@"ws://188.166.225.139:4000"
+#define kSaigonClassicURL   @"ws://103.7.41.111:4000"
+#define kSaigonURL          @"ws://123.215.040.139"
+#define kLaserURL           @"ws://103.7.41.111:9000"
 
 
 @interface NormalViewController () <SRWebSocketDelegate, UIAlertViewDelegate, UIActionSheetDelegate> {
@@ -27,6 +28,9 @@
     __weak IBOutlet UIButton *btn1;
     __weak IBOutlet UIButton *btn3;
     BOOL isConnected;
+    
+    SRWebSocket* laserSocket;
+    BOOL isLaserConnected;
 }
 
 @end
@@ -37,40 +41,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     isConnected = NO;
+    isLaserConnected = NO;
     [self setupSocket];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+    [self setupLaserSocket];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     [socket closeWithCode:-1 reason:@"goback"];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-//    [[UserGuide sharedInstance] addSimpleUserGuideWithText:kUserGuideReconnect atView:buttonState fromRect:buttonState.frame fromViewController:self];
-//    [[UserGuide sharedInstance] addSimpleUserGuideWithText:kUserGuideSquare atView:btnSquare fromRect:btnSquare.frame fromViewController:self];
-//    [[UserGuide sharedInstance] addSimpleUserGuideWithText:kUserGuideOval atView:btnOval fromRect:btnOval.frame fromViewController:self];
-//    [[UserGuide sharedInstance] addSimpleUserGuideWithText:kUserGuideCircle atView:btnCircle fromRect:btnCircle.frame fromViewController:self];
-//    [[UserGuide sharedInstance] addSimpleUserGuideWithText:kUserGuide2 atView:btn2 fromRect:btn2.frame fromViewController:self];
-//    [[UserGuide sharedInstance] addSimpleUserGuideWithText:kUserGuide8 atView:btn8 fromRect:btn8.frame fromViewController:self];
-//    [[UserGuide sharedInstance] addSimpleUserGuideWithText:kUserGuideTurnLeft atView:btn1 fromRect:btn1.frame fromViewController:self];
-//    [[UserGuide sharedInstance] addSimpleUserGuideWithText:kUserGuideTurnRight atView:btn3 fromRect:btn3.frame fromViewController:self];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [laserSocket closeWithCode:-1 reason:@"goback"];
 }
 
 - (void)dealloc
 {
+    
+}
+
+- (void)setupLaserSocket
+{
+    laserSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kLaserURL]]];
+    [laserSocket setDelegate:self];
+    [laserSocket open];
 }
 
 - (void)setupSocket
@@ -93,7 +85,9 @@
 - (void)reconnect
 {
     socket = nil;
+    laserSocket = nil;
     [self setupSocket];
+    [self setupLaserSocket];
 }
 
 #pragma mark - WebSocket Delegate
@@ -101,26 +95,18 @@
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket
 {
     NSLog(@"Connected");
-    isConnected = YES;
+    if (webSocket==laserSocket) {
+        isLaserConnected = YES;
+    } else if (webSocket==socket) {
+        isConnected = YES;
+        
+    }
     [self sendToken];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
 {
     NSLog(@"Received \"%@\"", message);
-    if ([message isEqualToString:@"success"]) {
-        NSLog(@"login successfully");
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Done" message:@"Welcome to License 2 Draw. Your 5 minutes Drawing session begins now!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        alertView.tag = 1;
-        [buttonState setImage:[UIImage imageNamed:@"connected.png"] forState:UIControlStateNormal];
-        [alertView show];
-    } else if ([message isEqualToString:@"norobot"]) {
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"No Robot" message:@"There is no robot with this name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//        [alertView show];
-    } else if ([message isEqualToString:@"your robot not available"]) {
-//        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"No Robot" message:@"Your desired robot is busy at the moment, please try again after 5 minutes" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//        [alertView show];
-    }
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
@@ -138,6 +124,9 @@
 #pragma mark - Actions
 - (IBAction)directionButtonSelected:(id)sender
 {
+    if (!isConnected) {
+        return;
+    }
     UIButton* button = (UIButton*)sender;
     NSString* message = [NSString stringWithFormat:@"%d", button.tag];
     [socket send:message];
@@ -158,10 +147,10 @@
 }
 - (IBAction)laserButtonSelected:(id)sender
 {
-    if (!isConnected) {
+    if (!isLaserConnected) {
         return;
     }
-    [socket send:@"lz"];
+    [laserSocket send:@"lz"];
 }
 
 - (IBAction)circleBtnSelected:(id)sender
@@ -169,7 +158,7 @@
     if (!isConnected) {
         return;
     }
-    [socket send:@"x"];
+    [laserSocket send:@"x"];
 }
 
 - (IBAction)squareBtnSelected:(id)sender
@@ -177,14 +166,14 @@
     if (!isConnected) {
         return;
     }
-    [socket send:@"y"];
+    [laserSocket send:@"y"];
 }
 - (IBAction)ovalBtnSelected:(id)sender
 {
     if (!isConnected) {
         return;
     }
-    [socket send:@"z"];
+    [laserSocket send:@"z"];
 }
 
 - (IBAction)btnStateSelected:(id)sender
@@ -200,8 +189,14 @@
 {
     if (!isConnected) {
         return;
+    } else if (isConnected) {
+        [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
+    } else if (!isLaserConnected) {
+        return;
+    } else if (isLaserConnected) {
+        [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
     }
-    [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
+    
 }
 
 #pragma mark - UIAlertView Delegate
@@ -230,6 +225,7 @@
     if (!isConnected) {
         return;
     }
+    
     [socket send:@"5"];
     [socket send:@"0"];
     [socket close];
@@ -237,6 +233,12 @@
     alertView.tag = 2;
     [alertView show];
     [buttonState setImage:[UIImage imageNamed:@"lost.png"] forState:UIControlStateNormal];
+    
+    if (!isLaserConnected) {
+        return;
+    }
+    [laserSocket send:@"0"];
+    [laserSocket close];
 }
 
 - (void)share
