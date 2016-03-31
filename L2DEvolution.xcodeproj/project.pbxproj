@@ -775,13 +775,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = L2DEvolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "License 2 Draw";
-				PROVISIONING_PROFILE = "ed34ac91-3b35-4536-8680-ccf3059204cc";
+				PROVISIONING_PROFILE = "bfade137-5609-4274-a3e4-57f2285f4ef0";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -791,13 +789,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = L2DEvolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "License 2 Draw";
-				PROVISIONING_PROFILE = "c5bfd857-999a-46ae-b6c4-791a2cd9ea2a";
+				PROVISIONING_PROFILE = "e425bee6-2fdd-46f0-9a90-774b82afb03e";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
