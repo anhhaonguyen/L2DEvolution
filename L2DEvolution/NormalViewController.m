@@ -12,9 +12,9 @@
 #import "UserGuide.h"
 
 #define kYokohamaURL        @"ws://123.215.040.139"//@"ws://188.166.225.139:4000"
-#define kSaigonClassicURL   @"ws://103.7.41.111:4000"
+#define kSaigonClassicURL   @"ws://188.166.225.139:4000"
 #define kSaigonURL          @"ws://123.215.040.139"
-#define kLaserURL           @"ws://103.7.41.111:9000"
+#define kLaserURL           @"ws://188.166.225.139:9000"
 
 
 @interface NormalViewController () <SRWebSocketDelegate, UIAlertViewDelegate, UIActionSheetDelegate> {

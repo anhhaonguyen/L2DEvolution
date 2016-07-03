@@ -11,8 +11,8 @@
 #import "AFNetworking.h"
 #import <Social/Social.h>
 
-#define kURL @"ws://103.7.41.111:9000"
-#define kURL2 @"ws://103.7.41.111:8000"
+#define kURL @"ws://188.166.225.139:9000"
+#define kURL2 @"ws://188.166.225.139:8000"
 
 @interface ViewController () <SRWebSocketDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
     SRWebSocket* socket;
