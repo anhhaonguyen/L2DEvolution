@@ -11,10 +11,10 @@
 #import <Social/Social.h>
 #import "UserGuide.h"
 
-#define kYokohamaURL        @"ws://123.215.040.139"//@"ws://188.166.225.139:4000"
-#define kSaigonClassicURL   @"ws://188.166.225.139:4000"
-#define kSaigonURL          @"ws://123.215.040.139"
-#define kLaserURL           @"ws://188.166.225.139:9000"
+#define kYokohamaURL        @"ws://139.162.62.58"//@"ws://188.166.225.139:4000"
+#define kSaigonClassicURL   @"ws://139.162.62.58:4000"
+#define kSaigonURL          @"ws://139.162.62.58"
+#define kLaserURL           @"ws://139.162.62.58:9000" // Linode
 
 
 @interface NormalViewController () <SRWebSocketDelegate, UIAlertViewDelegate, UIActionSheetDelegate> {
@@ -101,7 +101,7 @@
         isConnected = YES;
         
     }
-    [self sendToken];
+//    [self sendToken];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
@@ -184,20 +184,20 @@
     [self reconnect];
 }
 #pragma mark - Helpers
-
-- (void)sendToken
-{
-    if (!isConnected) {
-        return;
-    } else if (isConnected) {
-        [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
-    } else if (!isLaserConnected) {
-        return;
-    } else if (isLaserConnected) {
-        [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
-    }
-    
-}
+//
+//- (void)sendToken
+//{
+//    if (!isConnected) {
+//        return;
+//    } else if (isConnected) {
+//        [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
+//    } else if (!isLaserConnected) {
+//        return;
+//    } else if (isLaserConnected) {
+//        [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
+//    }
+//    
+//}
 
 #pragma mark - UIAlertView Delegate
 

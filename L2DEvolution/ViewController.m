@@ -11,14 +11,16 @@
 #import "AFNetworking.h"
 #import <Social/Social.h>
 
-#define kURL @"ws://188.166.225.139:9000"
-#define kURL2 @"ws://188.166.225.139:8000"
+#define kURL @"ws://139.162.62.58:9000" //Linode
+#define kURL2 @"ws://139.162.62.58:8000"
 
 @interface ViewController () <SRWebSocketDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
     SRWebSocket* socket;
     __weak IBOutlet UIButton *buttonState;
     NSTimer* timer;
     BOOL isConnected;
+    
+    NSString* evoPrefix;
 }
 @end
 
@@ -28,6 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     isConnected = NO;
+    evoPrefix = @"";
     [self setupSocket];
 }
 
@@ -65,7 +68,7 @@
 {
     NSLog(@"Connected");
     isConnected = YES;
-    [self sendToken];
+//    [self sendToken];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message
@@ -101,22 +104,24 @@
 
 #pragma mark - Helpers
 
-- (void)sendToken
-{
-    if (!isConnected) {
-        return;
-    }
-    [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
-}
+//- (void)sendToken
+//{
+//    if (!isConnected) {
+//        return;
+//    }
+//    [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
+//}
 
 - (void)setupSocket
 {
     if (self.tag==9000) {
         NSLog(@"Connect to port 9000");
         socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kURL]]];
+        evoPrefix = @"E1";
     } else {
         NSLog(@"Connect to port 8000");
         socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kURL2]]];
+        evoPrefix = @"E2";
     }
     
     [socket setDelegate:self];
@@ -165,7 +170,7 @@
     }
     UIButton* btn = (UIButton*)sender;
     NSLog(@"Button %ld pressed", (long)btn.tag);
-    NSString* message = [NSString stringWithFormat:@"%ld", (long)btn.tag];
+    NSString* message = [NSString stringWithFormat:@"%@%ld", evoPrefix, (long)btn.tag];
     [socket send:message];
 }
 
@@ -174,7 +179,7 @@
     if (!isConnected) {
         return;
     }
-    [socket send:@"5"];
+    [socket send:[NSString stringWithFormat:@"%@5", evoPrefix]];
 }
 
 - (IBAction)squareBtnSelected:(id)sender

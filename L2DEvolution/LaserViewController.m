@@ -9,7 +9,7 @@
 #import "LaserViewController.h"
 #import "SRWebSocket.h"
 
-#define kURL @"ws://103.7.41.111:9000"
+#define kURL @"ws://139.162.62.58:9000"
 
 @interface LaserViewController () <SRWebSocketDelegate> {
     SRWebSocket* socket;
@@ -56,7 +56,7 @@
 {
     NSLog(@"Connected");
     isConnected = YES;
-    [self sendToken];
+//    [self sendToken];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
@@ -71,14 +71,6 @@
 }
 
 #pragma mark - Helpers
-
-- (void)sendToken
-{
-    if (!isConnected) {
-        return;
-    }
-    [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
-}
 
 - (void)setupSocket
 {
