@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vzd-Rz-SR5">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Vzd-Rz-SR5">
+>>>>>>> 7158b7b522cf067359f40277c9189712ffd80782
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -236,8 +240,8 @@
                                     <action selector="squareBtnSelected:" destination="PcS-y4-m2C" eventType="touchUpInside" id="I6K-Dp-sQR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pet-zL-H1R" userLabel="right">
-                                <rect key="frame" x="524" y="502" width="60" height="60"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pet-zL-H1R" userLabel="right">
+                                <rect key="frame" x="500" y="482" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="IRX-Zh-ACK"/>
                                     <constraint firstAttribute="width" constant="60" id="z3J-Cm-vuQ"/>
@@ -251,8 +255,8 @@
                                     <action selector="directionButtonSelected:" destination="PcS-y4-m2C" eventType="touchDown" id="hJ2-gd-7cf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aN-tt-uSO" userLabel="backward">
-                                <rect key="frame" x="16" y="532" width="60" height="60"/>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aN-tt-uSO" userLabel="backward">
+                                <rect key="frame" x="40" y="520" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Rse-6Y-QIw"/>
                                     <constraint firstAttribute="height" constant="60" id="jGU-eo-EIb"/>
@@ -266,8 +270,8 @@
                                     <action selector="directionButtonSelected:" destination="PcS-y4-m2C" eventType="touchDown" id="867-bs-VwV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeJ-SA-a9F" userLabel="left">
-                                <rect key="frame" x="456" y="502" width="60" height="60"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeJ-SA-a9F" userLabel="left">
+                                <rect key="frame" x="432" y="482" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="J8L-1y-Z6r"/>
                                     <constraint firstAttribute="width" constant="60" id="qem-He-9pB"/>
@@ -292,8 +296,8 @@
                                     <action selector="circleBtnSelected:" destination="PcS-y4-m2C" eventType="touchUpInside" id="VT2-cs-kqd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppo-qv-F0y" userLabel="forward">
-                                <rect key="frame" x="16" y="464" width="60" height="60"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppo-qv-F0y" userLabel="forward">
+                                <rect key="frame" x="40" y="452" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="5Pa-1k-kL5"/>
                                     <constraint firstAttribute="width" constant="60" id="X9A-pP-7MI"/>
@@ -319,22 +323,22 @@
                             <constraint firstItem="3aN-tt-uSO" firstAttribute="top" secondItem="ppo-qv-F0y" secondAttribute="bottom" constant="8" id="18f-LY-rMd"/>
                             <constraint firstItem="dgy-VN-TF7" firstAttribute="top" secondItem="EpP-0d-EI3" secondAttribute="top" id="2GG-7K-jtJ"/>
                             <constraint firstAttribute="centerX" secondItem="sxu-S5-Bnb" secondAttribute="centerX" id="2ix-zu-0tj"/>
-                            <constraint firstItem="3aN-tt-uSO" firstAttribute="leading" secondItem="EpP-0d-EI3" secondAttribute="leadingMargin" id="39F-9l-YbH"/>
+                            <constraint firstItem="3aN-tt-uSO" firstAttribute="leading" secondItem="EpP-0d-EI3" secondAttribute="leadingMargin" constant="20" id="39F-9l-YbH"/>
                             <constraint firstItem="ZQ8-5v-TK4" firstAttribute="leading" secondItem="Po8-kS-uQe" secondAttribute="trailing" constant="29" id="9OI-Ue-9Zj"/>
                             <constraint firstAttribute="centerX" secondItem="Po8-kS-uQe" secondAttribute="centerX" id="A3N-Ib-KPD"/>
-                            <constraint firstItem="sxu-S5-Bnb" firstAttribute="centerY" secondItem="oeJ-SA-a9F" secondAttribute="centerY" id="A4O-OM-wJc"/>
+                            <constraint firstItem="sxu-S5-Bnb" firstAttribute="centerY" secondItem="oeJ-SA-a9F" secondAttribute="centerY" constant="20" id="A4O-OM-wJc"/>
                             <constraint firstItem="dgy-VN-TF7" firstAttribute="leading" secondItem="EpP-0d-EI3" secondAttribute="leading" id="F4T-bc-jYM"/>
                             <constraint firstItem="ppo-qv-F0y" firstAttribute="leading" secondItem="3aN-tt-uSO" secondAttribute="leading" id="F8G-jO-d1k"/>
                             <constraint firstItem="PyP-ah-ihT" firstAttribute="centerY" secondItem="ZQ8-5v-TK4" secondAttribute="centerY" id="HGQ-rm-ToN"/>
                             <constraint firstItem="PyP-ah-ihT" firstAttribute="centerY" secondItem="Po8-kS-uQe" secondAttribute="centerY" id="Paa-n4-H2X"/>
-                            <constraint firstItem="5hU-sI-44q" firstAttribute="top" secondItem="3aN-tt-uSO" secondAttribute="bottom" constant="8" id="USr-GT-iI8"/>
+                            <constraint firstItem="5hU-sI-44q" firstAttribute="top" secondItem="3aN-tt-uSO" secondAttribute="bottom" constant="20" id="USr-GT-iI8"/>
                             <constraint firstItem="5hU-sI-44q" firstAttribute="top" secondItem="sxu-S5-Bnb" secondAttribute="bottom" constant="38" id="VH0-Jn-YLK"/>
                             <constraint firstItem="5hU-sI-44q" firstAttribute="top" secondItem="dgy-VN-TF7" secondAttribute="bottom" id="VV1-eI-UZg"/>
                             <constraint firstAttribute="trailing" secondItem="FcU-fR-IKZ" secondAttribute="trailing" id="aBI-Qr-bxI"/>
-                            <constraint firstItem="sxu-S5-Bnb" firstAttribute="centerY" secondItem="Pet-zL-H1R" secondAttribute="centerY" id="hRE-Hc-Tnv"/>
+                            <constraint firstItem="sxu-S5-Bnb" firstAttribute="centerY" secondItem="Pet-zL-H1R" secondAttribute="centerY" constant="20" id="hRE-Hc-Tnv"/>
                             <constraint firstItem="FcU-fR-IKZ" firstAttribute="top" secondItem="Cho-Od-moJ" secondAttribute="bottom" id="hmg-om-hQ0"/>
                             <constraint firstItem="FcU-fR-IKZ" firstAttribute="leading" secondItem="EpP-0d-EI3" secondAttribute="leading" id="i4B-D5-OIs"/>
-                            <constraint firstItem="Pet-zL-H1R" firstAttribute="trailing" secondItem="EpP-0d-EI3" secondAttribute="trailingMargin" id="kW2-Za-pjd"/>
+                            <constraint firstItem="Pet-zL-H1R" firstAttribute="trailing" secondItem="EpP-0d-EI3" secondAttribute="trailingMargin" constant="-20" id="kW2-Za-pjd"/>
                             <constraint firstAttribute="trailing" secondItem="dgy-VN-TF7" secondAttribute="trailing" id="qbi-Ox-vYM"/>
                             <constraint firstItem="Pet-zL-H1R" firstAttribute="leading" secondItem="oeJ-SA-a9F" secondAttribute="trailing" constant="8" id="s1p-c7-oqe"/>
                             <constraint firstItem="Po8-kS-uQe" firstAttribute="top" secondItem="FcU-fR-IKZ" secondAttribute="bottom" constant="8" id="th0-1K-xlg"/>
