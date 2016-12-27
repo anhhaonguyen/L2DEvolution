@@ -9,7 +9,7 @@
 #import "LaserViewController.h"
 #import "SRWebSocket.h"
 
-#define kURL @"ws://139.162.62.58:9000"
+#define kURL @"ws://139.162.47.39:9000"
 
 @interface LaserViewController () <SRWebSocketDelegate> {
     SRWebSocket* socket;

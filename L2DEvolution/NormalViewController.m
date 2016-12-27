@@ -11,10 +11,10 @@
 #import <Social/Social.h>
 #import "UserGuide.h"
 
-#define kYokohamaURL        @"ws://139.162.62.58"//@"ws://188.166.225.139:4000"
-#define kSaigonClassicURL   @"ws://139.162.62.58:4000"
-#define kSaigonURL          @"ws://139.162.62.58"
-#define kLaserURL           @"ws://139.162.62.58:9000" // Linode
+#define kYokohamaURL        @"ws://139.162.47.39"//@"ws://188.166.225.139:4000"
+#define kSaigonClassicURL   @"ws://139.162.47.39:4000"
+#define kSaigonURL          @"ws://139.162.47.39"
+#define kLaserURL           @"ws://139.162.47.39:9000" // Linode
 
 
 @interface NormalViewController () <SRWebSocketDelegate, UIAlertViewDelegate, UIActionSheetDelegate> {
