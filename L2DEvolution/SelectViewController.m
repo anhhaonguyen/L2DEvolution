@@ -9,7 +9,6 @@
 #import "SelectViewController.h"
 #import "ViewController.h"
 #import "NormalViewController.h"
-#import "UserGuide.h"
 #import "LaserViewController.h"
 
 #define kLosAngelesTag 0

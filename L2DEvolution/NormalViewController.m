@@ -9,12 +9,13 @@
 #import "SRWebSocket.h"
 #import "NormalViewController.h"
 #import <Social/Social.h>
-#import "UserGuide.h"
+#import "SharedLocation.h"
 
 #define kYokohamaURL        @"ws://139.162.47.39"//@"ws://188.166.225.139:4000"
 #define kSaigonClassicURL   @"ws://139.162.47.39:4000"
 #define kSaigonURL          @"ws://139.162.47.39"
 #define kLaserURL           @"ws://139.162.47.39:9000" // Linode
+#define kSocketURL          @"ws://139.162.47.39:3388"
 
 
 @interface NormalViewController () <SRWebSocketDelegate, UIAlertViewDelegate, UIActionSheetDelegate> {
@@ -28,6 +29,8 @@
     __weak IBOutlet UIButton *btn1;
     __weak IBOutlet UIButton *btn3;
     BOOL isConnected;
+    
+    SRWebSocket* currentActiveSocket;
     
     SRWebSocket* laserSocket;
     BOOL isLaserConnected;
@@ -51,6 +54,7 @@
     [super viewWillDisappear:animated];
     [socket closeWithCode:-1 reason:@"goback"];
     [laserSocket closeWithCode:-1 reason:@"goback"];
+    [currentActiveSocket closeWithCode:-1 reason:@"goback"];
 }
 
 - (void)dealloc
@@ -80,6 +84,28 @@
     }
     [socket setDelegate:self];
     [socket open];
+}
+
+- (void)setupActiveCurrentSocket {
+    currentActiveSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kSocketURL]]];
+    [currentActiveSocket setDelegate:self];
+    [currentActiveSocket open];
+}
+
+- (void)sendLocation {
+    CLPlacemark* placemark = [SharedLocation placemark];
+    CLLocation* location = [SharedLocation location];
+    
+    if (placemark && location) {
+        NSDictionary* dictionary = @{
+                                     @"lat": @(location.coordinate.latitude),
+                                     @"lng": @(location.coordinate.longitude),
+                                     @"country_code": placemark.ISOcountryCode,
+                                     @"country_name": placemark.country
+                                     };
+        NSLog(@"Send location: %@", [dictionary description]);
+        [currentActiveSocket send:[dictionary description]];
+    }
 }
 
 - (void)reconnect
@@ -130,6 +156,7 @@
     UIButton* button = (UIButton*)sender;
     NSString* message = [NSString stringWithFormat:@"%d", button.tag];
     [socket send:message];
+    [self sendLocation];
 }
 
 - (IBAction)buttonReleased:(id)sender
@@ -151,6 +178,7 @@
         return;
     }
     [laserSocket send:@"lz"];
+    [self sendLocation];
 }
 
 - (IBAction)circleBtnSelected:(id)sender
@@ -159,6 +187,7 @@
         return;
     }
     [laserSocket send:@"x"];
+    [self sendLocation];
 }
 
 - (IBAction)squareBtnSelected:(id)sender
@@ -167,6 +196,7 @@
         return;
     }
     [laserSocket send:@"y"];
+    [self sendLocation];
 }
 - (IBAction)ovalBtnSelected:(id)sender
 {
@@ -174,6 +204,7 @@
         return;
     }
     [laserSocket send:@"z"];
+    [self sendLocation];
 }
 
 - (IBAction)btnStateSelected:(id)sender

@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "UserGuide.h"
+#import "SharedLocation.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,8 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[UserGuide sharedInstance] resetUserGuide];
-    [WYPopoverController defaultTheme];
+    [SharedLocation requestLocation];
     return YES;
 }
 

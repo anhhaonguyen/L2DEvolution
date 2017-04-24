@@ -8,11 +8,14 @@
 
 #import "LaserViewController.h"
 #import "SRWebSocket.h"
+#import "SharedLocation.h"
 
 #define kURL @"ws://139.162.47.39:9000"
+#define kSocketURL @"ws://139.162.47.39:3388"
 
 @interface LaserViewController () <SRWebSocketDelegate> {
     SRWebSocket* socket;
+    SRWebSocket* currentActiveSocket;
     BOOL isConnected;
 }
 
@@ -25,6 +28,7 @@
     // Do any additional setup after loading the view.
     isConnected = NO;
     [self setupSocket];
+    [self setupActiveCurrentSocket];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +40,7 @@
 {
     [super viewWillDisappear:animated];
     [socket closeWithCode:-1 reason:@"goback"];
+    [currentActiveSocket closeWithCode:-1 reason:@"goback"];
 }
 
 - (void)dealloc
@@ -48,6 +53,23 @@
     NSLog(@"Laser %d pressed, lz%d", sender.tag, sender.tag);
     NSString* message = [NSString stringWithFormat:@"lz%ld", (long)sender.tag];
     [socket send:message];
+    [self sendLocation];
+}
+
+- (void)sendLocation {
+    CLPlacemark* placemark = [SharedLocation placemark];
+    CLLocation* location = [SharedLocation location];
+    
+    if (placemark && location) {
+        NSDictionary* dictionary = @{
+                                     @"lat": @(location.coordinate.latitude),
+                                     @"lng": @(location.coordinate.longitude),
+                                     @"country_code": placemark.ISOcountryCode,
+                                     @"country_name": placemark.country
+                                     };
+        NSLog(@"Send location: %@", [dictionary description]);
+        [currentActiveSocket send:[dictionary description]];
+    }
 }
 
 #pragma mark - WS Delegate
@@ -71,6 +93,12 @@
 }
 
 #pragma mark - Helpers
+
+- (void)setupActiveCurrentSocket {
+    currentActiveSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kSocketURL]]];
+    [currentActiveSocket setDelegate:self];
+    [currentActiveSocket open];
+}
 
 - (void)setupSocket
 {

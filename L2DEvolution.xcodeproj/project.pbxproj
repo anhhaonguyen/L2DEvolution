@@ -28,10 +28,7 @@
 		50C126E51C7B605C000D45B1 /* background-568h-6p@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C126E31C7B605C000D45B1 /* background-568h-6p@2x.png */; };
 		50D186B71C78C798006A582A /* left_rotate.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D186B61C78C798006A582A /* left_rotate.png */; };
 		50D186B91C78C7A2006A582A /* right_rotate.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D186B81C78C7A2006A582A /* right_rotate.png */; };
-		8441613D1A3D653000E510B8 /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441613A1A3D653000E510B8 /* WYPopoverController.m */; };
-		8441613E1A3D653000E510B8 /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8441613C1A3D653000E510B8 /* WYStoryboardPopoverSegue.m */; };
-		844161411A3D660D00E510B8 /* UserGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 844161401A3D660D00E510B8 /* UserGuide.m */; };
-		844161441A3D6C7600E510B8 /* UserGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844161431A3D6C7600E510B8 /* UserGuideViewController.m */; };
+		50F508901EA521C0001DD5AE /* SharedLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F5088F1EA521C0001DD5AE /* SharedLocation.m */; };
 		84BA061D1A85CE1D004EA272 /* oval_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BA061C1A85CE1D004EA272 /* oval_horizontal.png */; };
 		84C450271A054EA40013A302 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C450261A054EA40013A302 /* main.m */; };
 		84C4502A1A054EA40013A302 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C450291A054EA40013A302 /* AppDelegate.m */; };
@@ -129,14 +126,8 @@
 		50C126E31C7B605C000D45B1 /* background-568h-6p@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-568h-6p@2x.png"; sourceTree = "<group>"; };
 		50D186B61C78C798006A582A /* left_rotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_rotate.png; sourceTree = "<group>"; };
 		50D186B81C78C7A2006A582A /* right_rotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_rotate.png; sourceTree = "<group>"; };
-		844161391A3D653000E510B8 /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYPopoverController.h; sourceTree = "<group>"; };
-		8441613A1A3D653000E510B8 /* WYPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYPopoverController.m; sourceTree = "<group>"; };
-		8441613B1A3D653000E510B8 /* WYStoryboardPopoverSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYStoryboardPopoverSegue.h; sourceTree = "<group>"; };
-		8441613C1A3D653000E510B8 /* WYStoryboardPopoverSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYStoryboardPopoverSegue.m; sourceTree = "<group>"; };
-		8441613F1A3D660D00E510B8 /* UserGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserGuide.h; sourceTree = "<group>"; };
-		844161401A3D660D00E510B8 /* UserGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserGuide.m; sourceTree = "<group>"; };
-		844161421A3D6C7600E510B8 /* UserGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserGuideViewController.h; sourceTree = "<group>"; };
-		844161431A3D6C7600E510B8 /* UserGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserGuideViewController.m; sourceTree = "<group>"; };
+		50F5088E1EA521C0001DD5AE /* SharedLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedLocation.h; sourceTree = "<group>"; };
+		50F5088F1EA521C0001DD5AE /* SharedLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedLocation.m; sourceTree = "<group>"; };
 		84BA061C1A85CE1D004EA272 /* oval_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oval_horizontal.png; sourceTree = "<group>"; };
 		84C450211A054EA40013A302 /* License 2 Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "License 2 Draw.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C450251A054EA40013A302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -260,17 +251,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		844161381A3D653000E510B8 /* WYPopoverController */ = {
-			isa = PBXGroup;
-			children = (
-				844161391A3D653000E510B8 /* WYPopoverController.h */,
-				8441613A1A3D653000E510B8 /* WYPopoverController.m */,
-				8441613B1A3D653000E510B8 /* WYStoryboardPopoverSegue.h */,
-				8441613C1A3D653000E510B8 /* WYStoryboardPopoverSegue.m */,
-			);
-			path = WYPopoverController;
-			sourceTree = "<group>";
-		};
 		84C450181A054EA30013A302 = {
 			isa = PBXGroup;
 			children = (
@@ -302,7 +282,6 @@
 		84C450231A054EA40013A302 /* L2DEvolution */ = {
 			isa = PBXGroup;
 			children = (
-				844161381A3D653000E510B8 /* WYPopoverController */,
 				84F6849B1A1B6FE700325466 /* Resource */,
 				84C4508B1A055A8C0013A302 /* UIKit+AFNetworking */,
 				84C4506E1A055A870013A302 /* AFNetworking */,
@@ -322,12 +301,10 @@
 				84C450331A054EA40013A302 /* LaunchScreen.xib */,
 				84C450241A054EA40013A302 /* Supporting Files */,
 				84D953D01A3098CA009CC799 /* Config.h */,
-				8441613F1A3D660D00E510B8 /* UserGuide.h */,
-				844161401A3D660D00E510B8 /* UserGuide.m */,
-				844161421A3D6C7600E510B8 /* UserGuideViewController.h */,
-				844161431A3D6C7600E510B8 /* UserGuideViewController.m */,
 				5012D6B61CA44BC90030E477 /* LaserViewController.h */,
 				5012D6B71CA44BC90030E477 /* LaserViewController.m */,
+				50F5088E1EA521C0001DD5AE /* SharedLocation.h */,
+				50F5088F1EA521C0001DD5AE /* SharedLocation.m */,
 			);
 			path = L2DEvolution;
 			sourceTree = "<group>";
@@ -622,9 +599,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8441613E1A3D653000E510B8 /* WYStoryboardPopoverSegue.m in Sources */,
 				84C450A21A055A8C0013A302 /* UIProgressView+AFNetworking.m in Sources */,
-				844161411A3D660D00E510B8 /* UserGuide.m in Sources */,
 				84C450A01A055A8C0013A302 /* UIButton+AFNetworking.m in Sources */,
 				84D953CC1A3095E4009CC799 /* NormalViewController.m in Sources */,
 				84C450A31A055A8C0013A302 /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -637,6 +612,7 @@
 				84C450871A055A870013A302 /* AFURLConnectionOperation.m in Sources */,
 				84C450A11A055A8C0013A302 /* UIImageView+AFNetworking.m in Sources */,
 				84C450821A055A870013A302 /* AFHTTPRequestOperation.m in Sources */,
+				50F508901EA521C0001DD5AE /* SharedLocation.m in Sources */,
 				84C4509E1A055A8C0013A302 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				84D953CF1A3096C2009CC799 /* SocketConnection.m in Sources */,
 				5012D6B81CA44BC90030E477 /* LaserViewController.m in Sources */,
@@ -647,9 +623,7 @@
 				84C450891A055A870013A302 /* AFURLResponseSerialization.m in Sources */,
 				84C450A41A055A8C0013A302 /* UIWebView+AFNetworking.m in Sources */,
 				84C4508A1A055A870013A302 /* AFURLSessionManager.m in Sources */,
-				844161441A3D6C7600E510B8 /* UserGuideViewController.m in Sources */,
 				84C4509D1A055A8C0013A302 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				8441613D1A3D653000E510B8 /* WYPopoverController.m in Sources */,
 				84C450271A054EA40013A302 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,13 +749,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = 6YPTSWJK4P;
+				DEVELOPMENT_TEAM = DMGREM5K5Z;
 				INFOPLIST_FILE = L2DEvolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "License 2 Draw";
-				PROVISIONING_PROFILE = "ee0a1c26-bd9b-4414-8d44-926539c76848";
-				PROVISIONING_PROFILE_SPECIFIER = GeneralDev;
+				PROVISIONING_PROFILE = "004cd951-d347-4d40-80a4-ee7fef741284";
+				PROVISIONING_PROFILE_SPECIFIER = L2D_Dev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

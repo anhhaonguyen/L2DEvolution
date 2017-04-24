@@ -10,9 +10,11 @@
 #import "SRWebSocket.h"
 #import "AFNetworking.h"
 #import <Social/Social.h>
+#import "SharedLocation.h"
 
 #define kURL @"ws://139.162.47.39:9000" //Linode
 #define kURL2 @"ws://139.162.47.39:8000"
+#define kSocketURL @"ws://139.162.47.39:3388"
 
 @interface ViewController () <SRWebSocketDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
     SRWebSocket* socket;
@@ -21,6 +23,8 @@
     BOOL isConnected;
     
     NSString* evoPrefix;
+    
+    SRWebSocket* currentActiveSocket;
 }
 @end
 
@@ -32,6 +36,7 @@
     isConnected = NO;
     evoPrefix = @"";
     [self setupSocket];
+    [self setupActiveCurrentSocket];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -43,6 +48,7 @@
 {
     [super viewWillDisappear:animated];
     [socket closeWithCode:-1 reason:@"goback"];
+    [currentActiveSocket closeWithCode:-1 reason:@"goback"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,8 +72,10 @@
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket
 {
-    NSLog(@"Connected");
-    isConnected = YES;
+    if (webSocket == socket) {
+        NSLog(@"Connected");
+        isConnected = YES;
+    }
 //    [self sendToken];
 }
 
@@ -111,6 +119,12 @@
 //    }
 //    [socket send:[NSString stringWithFormat:@"send-token,%@,%@", @"abc", @"123123"]];
 //}
+
+- (void)setupActiveCurrentSocket {
+    currentActiveSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kSocketURL]]];
+    [currentActiveSocket setDelegate:self];
+    [currentActiveSocket open];
+}
 
 - (void)setupSocket
 {
@@ -163,6 +177,24 @@
 
 #pragma mark - Actions
 
+- (void)sendLocation {
+    CLPlacemark* placemark = [SharedLocation placemark];
+    CLLocation* location = [SharedLocation location];
+    
+    if (placemark && location) {
+        NSDictionary* dictionary = @{
+                                     @"lat": @(location.coordinate.latitude),
+                                     @"lng": @(location.coordinate.longitude),
+                                     @"country_code": placemark.ISOcountryCode,
+                                     @"country_name": placemark.country
+                                     };
+        NSData* data = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:nil];
+        NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"Send location: %@", jsonString);
+        [currentActiveSocket send:jsonString];  
+    }
+}
+
 - (IBAction)buttonPressed:(id)sender
 {
     if (!isConnected) {
@@ -172,6 +204,7 @@
     NSLog(@"Button %ld pressed", (long)btn.tag);
     NSString* message = [NSString stringWithFormat:@"%@%ld", evoPrefix, (long)btn.tag];
     [socket send:message];
+    [self sendLocation];
 }
 
 - (IBAction)buttonReleased:(id)sender
@@ -188,6 +221,7 @@
         return;
     }
     [socket send:@"y"];
+    [self sendLocation];
 }
 - (IBAction)circleBtnSelected:(id)sender
 {
@@ -195,6 +229,7 @@
         return;
     }
     [socket send:@"x"];
+    [self sendLocation];
 }
 - (IBAction)ovalBtnSelected:(id)sender
 {
@@ -202,6 +237,7 @@
         return;
     }
     [socket send:@"z"];
+    [self sendLocation];
 }
 - (IBAction)btnStateSelected:(id)sender
 {
@@ -213,6 +249,7 @@
         return;
     }
     [socket send:@"lz"];
+    [self sendLocation];
 }
 #pragma mark - UIAlertView Delegate
 
