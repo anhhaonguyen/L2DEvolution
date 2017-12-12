@@ -67,8 +67,10 @@
                                      @"country_code": placemark.ISOcountryCode,
                                      @"country_name": placemark.country
                                      };
-        NSLog(@"Send location: %@", [dictionary description]);
-        [currentActiveSocket send:[dictionary description]];
+        NSData* data = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:nil];
+        NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"Send location: %@", jsonString);
+        [currentActiveSocket send:jsonString];  
     }
 }
 
@@ -76,8 +78,10 @@
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket
 {
-    NSLog(@"Connected");
-    isConnected = YES;
+    if (webSocket == socket) {
+        NSLog(@"Connected");
+        isConnected = YES;
+    }
 //    [self sendToken];
 }
 
@@ -110,7 +114,9 @@
 - (void)reconnect
 {
     socket = nil;
+    currentActiveSocket = nil;
     [self setupSocket];
+    [self setupActiveCurrentSocket];
 }
 
 
