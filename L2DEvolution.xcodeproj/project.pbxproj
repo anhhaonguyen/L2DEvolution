@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5012D6B81CA44BC90030E477 /* LaserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5012D6B71CA44BC90030E477 /* LaserViewController.m */; };
+		5036DC4121DCB62D00D21515 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5036DC4021DCB62D00D21515 /* DrawingView.swift */; };
+		5036DC4C21DDED9800D21515 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C4504D1A0552EA0013A302 /* SRWebSocket.m */; };
 		50A2722C21412EFA00C8DB07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2722B21412EFA00C8DB07 /* AppDelegate.swift */; };
 		50A2722E21412EFA00C8DB07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A2722D21412EFA00C8DB07 /* ViewController.swift */; };
 		50A2723121412EFA00C8DB07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50A2722F21412EFA00C8DB07 /* Main.storyboard */; };
@@ -39,6 +41,7 @@
 		50D186B71C78C798006A582A /* left_rotate.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D186B61C78C798006A582A /* left_rotate.png */; };
 		50D186B91C78C7A2006A582A /* right_rotate.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D186B81C78C7A2006A582A /* right_rotate.png */; };
 		50F508901EA521C0001DD5AE /* SharedLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F5088F1EA521C0001DD5AE /* SharedLocation.m */; };
+		6481EE80574BE83EBC01E5CD /* libPods-L2DEvolution.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C0A46705E375D95F1433460 /* libPods-L2DEvolution.a */; };
 		84BA061D1A85CE1D004EA272 /* oval_horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BA061C1A85CE1D004EA272 /* oval_horizontal.png */; };
 		84C450271A054EA40013A302 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C450261A054EA40013A302 /* main.m */; };
 		84C4502A1A054EA40013A302 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C450291A054EA40013A302 /* AppDelegate.m */; };
@@ -101,6 +104,8 @@
 		84F259A71A2DDE8A0097526C /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F259A61A2DDE8A0097526C /* title.png */; };
 		84F6849D1A1B6FF400325466 /* background~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F6849C1A1B6FF400325466 /* background~ipad.png */; };
 		84F684A01A1B771500325466 /* SelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F6849F1A1B771500325466 /* SelectViewController.m */; };
+		9C0EAB7C0D88A0D0E3E16961 /* libPods-L2DEvolutionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0469FDE5A64EF41543A1C32 /* libPods-L2DEvolutionTests.a */; };
+		C6DAFC95344FA6BC07A71D41 /* Pods_L2DFree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A11C85EF826D2C3A776FC9E /* Pods_L2DFree.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,8 +119,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		164AA6BC18E329B241367F54 /* Pods-L2DEvolution.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-L2DEvolution.release.xcconfig"; path = "Pods/Target Support Files/Pods-L2DEvolution/Pods-L2DEvolution.release.xcconfig"; sourceTree = "<group>"; };
+		16FD81F3F92FFBAB53A7ABDC /* Pods-L2DFree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-L2DFree.release.xcconfig"; path = "Pods/Target Support Files/Pods-L2DFree/Pods-L2DFree.release.xcconfig"; sourceTree = "<group>"; };
+		3C0A46705E375D95F1433460 /* libPods-L2DEvolution.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-L2DEvolution.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5012D6B61CA44BC90030E477 /* LaserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserViewController.h; sourceTree = "<group>"; };
 		5012D6B71CA44BC90030E477 /* LaserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaserViewController.m; sourceTree = "<group>"; };
+		5036DC4021DCB62D00D21515 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		5036DC4D21DDEE0900D21515 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		50A2722921412EFA00C8DB07 /* L2DFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = L2DFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2722B21412EFA00C8DB07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50A2722D21412EFA00C8DB07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +160,9 @@
 		50D186B81C78C7A2006A582A /* right_rotate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_rotate.png; sourceTree = "<group>"; };
 		50F5088E1EA521C0001DD5AE /* SharedLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedLocation.h; sourceTree = "<group>"; };
 		50F5088F1EA521C0001DD5AE /* SharedLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedLocation.m; sourceTree = "<group>"; };
+		56C75E405442BB35EB8CDAED /* Pods-L2DEvolutionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-L2DEvolutionTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-L2DEvolutionTests/Pods-L2DEvolutionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6A11C85EF826D2C3A776FC9E /* Pods_L2DFree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_L2DFree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7614830F435F3C25403A316C /* Pods-L2DEvolution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-L2DEvolution.debug.xcconfig"; path = "Pods/Target Support Files/Pods-L2DEvolution/Pods-L2DEvolution.debug.xcconfig"; sourceTree = "<group>"; };
 		84BA061C1A85CE1D004EA272 /* oval_horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oval_horizontal.png; sourceTree = "<group>"; };
 		84C450211A054EA40013A302 /* License 2 Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "License 2 Draw.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C450251A054EA40013A302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,6 +256,9 @@
 		84F6849C1A1B6FF400325466 /* background~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background~ipad.png"; sourceTree = "<group>"; };
 		84F6849E1A1B771500325466 /* SelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectViewController.h; sourceTree = "<group>"; };
 		84F6849F1A1B771500325466 /* SelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectViewController.m; sourceTree = "<group>"; };
+		C0469FDE5A64EF41543A1C32 /* libPods-L2DEvolutionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-L2DEvolutionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C88A3E811514AD23A01EEC /* Pods-L2DFree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-L2DFree.debug.xcconfig"; path = "Pods/Target Support Files/Pods-L2DFree/Pods-L2DFree.debug.xcconfig"; sourceTree = "<group>"; };
+		FE2607D02B669A0366717E27 /* Pods-L2DEvolutionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-L2DEvolutionTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-L2DEvolutionTests/Pods-L2DEvolutionTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6DAFC95344FA6BC07A71D41 /* Pods_L2DFree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +284,7 @@
 				84C4506B1A05559E0013A302 /* libicucore.dylib in Frameworks */,
 				84C4506C1A05559E0013A302 /* Social.framework in Frameworks */,
 				84C4506D1A05559E0013A302 /* MessageUI.framework in Frameworks */,
+				6481EE80574BE83EBC01E5CD /* libPods-L2DEvolution.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,12 +292,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C0EAB7C0D88A0D0E3E16961 /* libPods-L2DEvolutionTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31FCD120E6EBEC1ECD9D9E71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7614830F435F3C25403A316C /* Pods-L2DEvolution.debug.xcconfig */,
+				164AA6BC18E329B241367F54 /* Pods-L2DEvolution.release.xcconfig */,
+				56C75E405442BB35EB8CDAED /* Pods-L2DEvolutionTests.debug.xcconfig */,
+				FE2607D02B669A0366717E27 /* Pods-L2DEvolutionTests.release.xcconfig */,
+				D6C88A3E811514AD23A01EEC /* Pods-L2DFree.debug.xcconfig */,
+				16FD81F3F92FFBAB53A7ABDC /* Pods-L2DFree.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		50A2722A21412EFA00C8DB07 /* L2DFree */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +326,8 @@
 				50A2723F21412FB400C8DB07 /* CanvasSelectionViewController.swift */,
 				50A2724121412FC200C8DB07 /* CanvasViewController.swift */,
 				50A272432141306100C8DB07 /* CameraStream.swift */,
+				5036DC4021DCB62D00D21515 /* DrawingView.swift */,
+				5036DC4D21DDEE0900D21515 /* BridgingHeader.h */,
 			);
 			path = L2DFree;
 			sourceTree = "<group>";
@@ -315,6 +349,8 @@
 				84C4503D1A054EA40013A302 /* L2DEvolutionTests */,
 				50A2722A21412EFA00C8DB07 /* L2DFree */,
 				84C450221A054EA40013A302 /* Products */,
+				31FCD120E6EBEC1ECD9D9E71 /* Pods */,
+				8B7804E386603F2C8B14ECE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -503,6 +539,16 @@
 			name = Resource;
 			sourceTree = "<group>";
 		};
+		8B7804E386603F2C8B14ECE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C0A46705E375D95F1433460 /* libPods-L2DEvolution.a */,
+				C0469FDE5A64EF41543A1C32 /* libPods-L2DEvolutionTests.a */,
+				6A11C85EF826D2C3A776FC9E /* Pods_L2DFree.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,9 +556,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50A2723A21412EFC00C8DB07 /* Build configuration list for PBXNativeTarget "L2DFree" */;
 			buildPhases = (
+				E52AB7532C8E0F3FF152FD63 /* [CP] Check Pods Manifest.lock */,
 				50A2722521412EFA00C8DB07 /* Sources */,
 				50A2722621412EFA00C8DB07 /* Frameworks */,
 				50A2722721412EFA00C8DB07 /* Resources */,
+				0C1677B9CFD8568C4C42623E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -527,6 +575,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C450441A054EA40013A302 /* Build configuration list for PBXNativeTarget "L2DEvolution" */;
 			buildPhases = (
+				E73BC82343E96BF04D4412E1 /* [CP] Check Pods Manifest.lock */,
 				84C4501D1A054EA40013A302 /* Sources */,
 				84C4501E1A054EA40013A302 /* Frameworks */,
 				84C4501F1A054EA40013A302 /* Resources */,
@@ -544,6 +593,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84C450471A054EA40013A302 /* Build configuration list for PBXNativeTarget "L2DEvolutionTests" */;
 			buildPhases = (
+				E7B7C588AC63956C21CAC291 /* [CP] Check Pods Manifest.lock */,
 				84C450361A054EA40013A302 /* Sources */,
 				84C450371A054EA40013A302 /* Frameworks */,
 				84C450381A054EA40013A302 /* Resources */,
@@ -677,6 +727,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C1677B9CFD8568C4C42623E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-L2DFree/Pods-L2DFree-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-L2DFree/Pods-L2DFree-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E52AB7532C8E0F3FF152FD63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-L2DFree-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E73BC82343E96BF04D4412E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-L2DEvolution-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7B7C588AC63956C21CAC291 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-L2DEvolutionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		50A2722521412EFA00C8DB07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -685,8 +810,10 @@
 				50A2723E21412F3B00C8DB07 /* Socket.swift in Sources */,
 				50A272442141306100C8DB07 /* CameraStream.swift in Sources */,
 				50A2724021412FB400C8DB07 /* CanvasSelectionViewController.swift in Sources */,
+				5036DC4121DCB62D00D21515 /* DrawingView.swift in Sources */,
 				50A2722E21412EFA00C8DB07 /* ViewController.swift in Sources */,
 				50A2723C21412F3000C8DB07 /* API.swift in Sources */,
+				5036DC4C21DDED9800D21515 /* SRWebSocket.m in Sources */,
 				50A2724221412FC200C8DB07 /* CanvasViewController.swift in Sources */,
 				50A2722C21412EFA00C8DB07 /* AppDelegate.swift in Sources */,
 			);
@@ -781,6 +908,7 @@
 /* Begin XCBuildConfiguration section */
 		50A2723821412EFC00C8DB07 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6C88A3E811514AD23A01EEC /* Pods-L2DFree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -806,6 +934,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/L2DEvolution/SocketRocket";
 				INFOPLIST_FILE = L2DFree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -815,6 +944,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = GeneralDev;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(TARGET_NAME)/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -823,6 +953,7 @@
 		};
 		50A2723921412EFC00C8DB07 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16FD81F3F92FFBAB53A7ABDC /* Pods-L2DFree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -848,6 +979,7 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/L2DEvolution/SocketRocket";
 				INFOPLIST_FILE = L2DFree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -855,6 +987,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uudam.L2DFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(TARGET_NAME)/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -941,6 +1074,7 @@
 		};
 		84C450451A054EA40013A302 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7614830F435F3C25403A316C /* Pods-L2DEvolution.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -957,6 +1091,7 @@
 		};
 		84C450461A054EA40013A302 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 164AA6BC18E329B241367F54 /* Pods-L2DEvolution.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -974,6 +1109,7 @@
 		};
 		84C450481A054EA40013A302 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56C75E405442BB35EB8CDAED /* Pods-L2DEvolutionTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -993,6 +1129,7 @@
 		};
 		84C450491A054EA40013A302 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE2607D02B669A0366717E27 /* Pods-L2DEvolutionTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
